@@ -45,37 +45,31 @@ app.use((req, res, next) => {
   next();
 });
 
+// Error Handling
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+  const status = err.status || err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+  console.error("Error:", err);
+  res.status(status).json({ message });
+});
+
 (async () => {
-  const server = await registerRoutes(app);
-
-  // Error Handling
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-    res.status(status).json({ message });
-    throw err;
-  });
-
-  // First register API routes
-  const server = await registerRoutes(app);
-
-  // Then setup static file serving based on environment
+  console.log("Starting server with NODE_ENV:", process.env.NODE_ENV);
+  
+  // Setup based on environment
   if (process.env.NODE_ENV === "development") {
-    await setupVite(app, server);
+    console.log("Setting up development mode");
+    const devServer = await registerRoutes(app);
+    await setupVite(app, devServer);
+    devServer.listen(PORT, "0.0.0.0", () => {
+      log(`🚀 Server running in development mode on http://localhost:${PORT}`);
+    });
   } else {
     console.log("Setting up production mode");
+    const prodServer = await registerRoutes(app);
     setupProduction(app);
+    prodServer.listen(PORT, "0.0.0.0", () => {
+      log(`🚀 Server running in production mode on port ${PORT}`);
+    });
   }
-
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`🚀 Server running on http://localhost:${port}`);
-    }
-  );
 })();
