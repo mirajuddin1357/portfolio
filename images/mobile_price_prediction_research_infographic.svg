@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- Wood Gradient Background -->
+    <linearGradient id="bgWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4e311b" />
+      <stop offset="40%" stop-color="#704322" />
+      <stop offset="70%" stop-color="#553013" />
+      <stop offset="100%" stop-color="#3b210c" />
+    </linearGradient>
+    
+    <!-- Light Wood Gradient for panels -->
+    <linearGradient id="panelWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e3b982" />
+      <stop offset="50%" stop-color="#ce9c5b" />
+      <stop offset="100%" stop-color="#b88344" />
+    </linearGradient>
+
+    <!-- Highlight Wood for circles -->
+    <linearGradient id="circleWood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8a5629" />
+      <stop offset="100%" stop-color="#4a2c13" />
+    </linearGradient>
+
+    <!-- Shadow filter (disabled to remove blurriness) -->
+    <filter id="drop-shadow">
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow (disabled to remove blurriness) -->
+    <filter id="glow">
+      <feMerge>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="800" rx="15" fill="url(#bgWood)" />
+  
+  <!-- Subtle "wood grain" curves (simplified for SVG) -->
+  <path d="M 0 50 Q 300 200 800 100" stroke="#3b210c" stroke-width="8" fill="none" opacity="0.4"/>
+  <path d="M 0 150 Q 400 300 800 250" stroke="#3b210c" stroke-width="12" fill="none" opacity="0.3"/>
+  <path d="M 0 250 Q 500 450 800 400" stroke="#3b210c" stroke-width="5" fill="none" opacity="0.4"/>
+  <path d="M 0 450 Q 300 550 800 500" stroke="#3b210c" stroke-width="10" fill="none" opacity="0.3"/>
+  <path d="M 0 650 Q 400 750 800 700" stroke="#3b210c" stroke-width="8" fill="none" opacity="0.4"/>
+
+  <!-- Title Section -->
+  <rect x="40" y="40" width="720" height="110" rx="15" fill="url(#panelWood)" filter="url(#drop-shadow)"/>
+  
+  <!-- Inner dark border for panel -->
+  <rect x="45" y="45" width="710" height="100" rx="12" fill="none" stroke="#8a5629" stroke-width="2" opacity="0.5"/>
+
+  <text x="400" y="85" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="bolder" fill="#311909" text-anchor="middle" filter="url(#glow)">Smartphone Price Prediction</text>
+  <text x="400" y="115" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#5a3311" text-anchor="middle">A Comparative Analysis of Machine Learning Regression Models</text>
+
+  <!-- Card 1: Machine Learning -->
+  <rect x="40" y="200" width="220" height="340" rx="15" fill="url(#panelWood)" filter="url(#drop-shadow)"/>
+  <rect x="45" y="205" width="210" height="330" rx="12" fill="none" stroke="#8a5629" stroke-width="2" opacity="0.5"/>
+  
+  <circle cx="150" cy="280" r="50" fill="url(#circleWood)" filter="url(#drop-shadow)"/>
+  <!-- Research Graphics / Chart Icon -->
+  <g stroke="#fde6c4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95">
+    <!-- Axes -->
+    <path d="M 120 250 L 120 300 L 180 300" />
+    <!-- Bar charts -->
+    <rect x="130" y="275" width="10" height="25" fill="#fde6c4" stroke="none" />
+    <rect x="150" y="260" width="10" height="40" fill="#fde6c4" stroke="none" />
+    <rect x="170" y="245" width="10" height="55" fill="#fde6c4" stroke="none" />
+    <!-- Upward trend line (Regression) -->
+    <path d="M 125 290 L 145 265 L 165 270 L 185 235" stroke="#ffd085" stroke-width="4" />
+    <polygon points="185,235 180,245 192,243" fill="#ffd085" stroke="none"/>
+  </g>
+  
+  <text x="150" y="370" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="bold" fill="#311909" text-anchor="middle">ML Models</text>
+  <rect x="70" y="390" width="160" height="2" fill="#8a5629" opacity="0.5"/>
+  
+  <text x="150" y="420" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">Random Forest</text>
+  <text x="150" y="450" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">XGBoost &amp; LightGBM</text>
+  <text x="150" y="480" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">Feature Engineering</text>
+
+  <!-- Connection Arrow 1 -->
+  <g opacity="0.8">
+    <path d="M 270 370 L 300 370" stroke="#fde6c4" stroke-width="6" stroke-linecap="round" filter="url(#drop-shadow)"/>
+    <polygon points="295,360 315,370 295,380" fill="#fde6c4" filter="url(#drop-shadow)"/>
+  </g>
+
+  <!-- Card 2: Optuna Optimization -->
+  <rect x="290" y="200" width="220" height="340" rx="15" fill="url(#panelWood)" filter="url(#drop-shadow)"/>
+  <rect x="295" y="205" width="210" height="330" rx="12" fill="none" stroke="#8a5629" stroke-width="2" opacity="0.5"/>
+  
+  <circle cx="400" cy="280" r="50" fill="url(#circleWood)" filter="url(#drop-shadow)"/>
+  <!-- Gear / Optimization Icon -->
+  <g stroke="#fde6c4" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9">
+    <circle cx="400" cy="280" r="18"/>
+    <!-- Gear teeth -->
+    <path d="M 400 250 L 400 240 M 400 310 L 400 320 M 370 280 L 360 280 M 430 280 L 440 280 M 378 258 L 371 251 M 422 302 L 429 309 M 378 302 L 371 309 M 422 258 L 429 251" />
+  </g>
+
+  <text x="400" y="370" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="bold" fill="#311909" text-anchor="middle">Optuna</text>
+  <rect x="320" y="390" width="160" height="2" fill="#8a5629" opacity="0.5"/>
+  
+  <text x="400" y="420" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">Hyperparameter Tuning</text>
+  <text x="400" y="450" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">Automated Search</text>
+  <text x="400" y="480" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">Performance Boost</text>
+
+  <!-- Connection Arrow 2 -->
+  <g opacity="0.8">
+    <path d="M 520 370 L 550 370" stroke="#fde6c4" stroke-width="6" stroke-linecap="round" filter="url(#drop-shadow)"/>
+    <polygon points="545,360 565,370 545,380" fill="#fde6c4" filter="url(#drop-shadow)"/>
+  </g>
+
+  <!-- Card 3: Streamlit Deployment -->
+  <rect x="540" y="200" width="220" height="340" rx="15" fill="url(#panelWood)" filter="url(#drop-shadow)"/>
+  <rect x="545" y="205" width="210" height="330" rx="12" fill="none" stroke="#8a5629" stroke-width="2" opacity="0.5"/>
+  
+  <circle cx="650" cy="280" r="50" fill="url(#circleWood)" filter="url(#drop-shadow)"/>
+  <!-- Detailed Smartphone / App Interface Icon -->
+  <g opacity="0.95">
+    <!-- Phone body -->
+    <rect x="625" y="240" width="50" height="80" rx="8" fill="#311909" stroke="#fde6c4" stroke-width="3"/>
+    <!-- Screen -->
+    <rect x="630" y="248" width="40" height="60" rx="3" fill="#fde6c4" stroke="none"/>
+    <!-- Camera notch -->
+    <rect x="643" y="244" width="14" height="4" rx="2" fill="#fde6c4" stroke="none"/>
+    <!-- Home button -->
+    <circle cx="650" cy="314" r="3" fill="#fde6c4" stroke="none"/>
+    <!-- App UI Lines & Graphs (Dark lines on light screen) -->
+    <rect x="635" y="255" width="30" height="6" rx="2" fill="#8a5629" />
+    <path d="M 635 275 L 645 265 L 655 270 L 665 260" stroke="#4a2c13" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="635" y="285" width="20" height="4" rx="1" fill="#a46f41" />
+    <rect x="635" y="295" width="25" height="4" rx="1" fill="#a46f41" />
+  </g>
+
+  <text x="650" y="370" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="bold" fill="#311909" text-anchor="middle">Streamlit</text>
+  <rect x="570" y="390" width="160" height="2" fill="#8a5629" opacity="0.5"/>
+  
+  <text x="650" y="420" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">Interactive Dashboard</text>
+  <text x="650" y="450" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">Real-time Predictions</text>
+  <text x="650" y="480" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4a2c13" font-weight="500" text-anchor="middle">Web Deployment</text>
+
+  <!-- Bottom Large Research Illustration (Books, Pens, Magnifying Glass) -->
+  <g transform="translate(40, 530)" filter="url(#drop-shadow)">
+    <!-- Base large shelf/desk -->
+    <rect x="0" y="220" width="720" height="25" rx="8" fill="url(#panelWood)"/>
+    
+    <!-- Huge Stack of Books on left -->
+    <!-- Book 1 -->
+    <path d="M 80 180 L 300 180 Q 310 180 310 200 Q 310 220 300 220 L 80 220 Q 90 200 80 180 Z" fill="#29160a" stroke="#2a1405" stroke-width="3"/>
+    <rect x="85" y="186" width="210" height="28" fill="#e8c293" stroke="#b08151" stroke-width="1"/>
+    <line x1="85" y1="195" x2="295" y2="195" stroke="#c49a6e" stroke-width="2"/>
+    <line x1="85" y1="205" x2="295" y2="205" stroke="#c49a6e" stroke-width="2"/>
+    <!-- Book 1 Spine Details -->
+    <line x1="83" y1="185" x2="83" y2="215" stroke="#a46f41" stroke-width="2"/>
+    <line x1="88" y1="182" x2="88" y2="218" stroke="#120803" stroke-width="2"/>
+
+    <!-- Book 2 -->
+    <path d="M 95 145 L 285 145 Q 295 145 295 162.5 Q 295 180 285 180 L 95 180 Q 105 162.5 95 145 Z" fill="#965b32" stroke="#2a1405" stroke-width="3"/>
+    <rect x="100" y="150" width="180" height="25" fill="#fdf0dd" stroke="#b08151" stroke-width="1"/>
+    <line x1="100" y1="158" x2="280" y2="158" stroke="#c49a6e" stroke-width="2"/>
+    <line x1="100" y1="168" x2="280" y2="168" stroke="#c49a6e" stroke-width="2"/>
+
+    <!-- Book 3 -->
+    <path d="M 110 115 L 270 115 Q 280 115 280 130 Q 280 145 270 145 L 110 145 Q 120 130 110 115 Z" fill="#6e3d1b" stroke="#2a1405" stroke-width="3"/>
+    <rect x="115" y="120" width="150" height="20" fill="#e8c293" stroke="#b08151" stroke-width="1"/>
+    <line x1="115" y1="130" x2="265" y2="130" stroke="#c49a6e" stroke-width="2"/>
+
+    <!-- Book 4 (Top) -->
+    <path d="M 120 85 L 260 85 Q 270 85 270 100 Q 270 115 260 115 L 120 115 Q 130 100 120 85 Z" fill="#ad7040" stroke="#2a1405" stroke-width="3"/>
+    <rect x="125" y="90" width="130" height="20" fill="#fdf0dd" stroke="#b08151" stroke-width="1"/>
+    <line x1="125" y1="100" x2="255" y2="100" stroke="#c49a6e" stroke-width="2"/>
+    
+    <!-- Beautiful Fountain Pen Illustration -->
+    <!-- Leaning beautifully across the books and desk -->
+    <g transform="translate(625, -15) rotate(35)">
+      <!-- Pen body -->
+      <path d="M 0 0 C 15 -10 35 -10 50 0 L 50 140 C 35 150 15 150 0 140 Z" fill="#522b10" stroke="#2a1405" stroke-width="3"/>
+      <!-- Wood grain on body -->
+      <path d="M 10 10 C 15 50 10 90 10 130" fill="none" stroke="#361a08" stroke-width="2"/>
+      <path d="M 25 5 C 30 50 20 100 25 135" fill="none" stroke="#361a08" stroke-width="3"/>
+      <!-- Pen Nib (Fountain point) -->
+      <path d="M 10 140 L 25 190 L 40 140 Z" fill="#e8c293" stroke="#2a1405" stroke-width="3"/>
+      <line x1="25" y1="140" x2="25" y2="175" stroke="#2a1405" stroke-width="2"/>
+      <circle cx="25" cy="170" r="3" fill="#2a1405"/>
+      <!-- Pen cap/base ridge -->
+      <rect x="-2" y="30" width="54" height="8" rx="2" fill="#965b32" stroke="#2a1405" stroke-width="2"/>
+    </g>
+
+    <!-- Detailed Ink Bottle (Wood-themed) -->
+    <g transform="translate(480, 145)">
+      <!-- Base of bottle -->
+      <path d="M 10 70 L 60 70 L 70 20 L 0 20 Z" fill="#42220e" stroke="#2a1405" stroke-width="3"/>
+      <path d="M 10 70 L 60 70 Q 60 80 35 80 Q 10 80 10 70 Z" fill="#29160a" stroke="#2a1405" stroke-width="3"/>
+      <!-- Label -->
+      <rect x="23" y="30" width="24" height="30" fill="#e8c293" stroke="#2a1405" stroke-width="1"/>
+      <rect x="25" y="35" width="20" height="2" fill="#2a1405"/>
+      <!-- Bottle neck -->
+      <rect x="25" y="0" width="20" height="20" fill="#42220e" stroke="#2a1405" stroke-width="2"/>
+      <!-- Bottle cork/cap -->
+      <path d="M 20 -10 L 50 -10 L 45 0 L 25 0 Z" fill="#b08151" stroke="#2a1405" stroke-width="2"/>
+    </g>
+
+    <!-- Real-looking Magnifying Glass -->
+    <g transform="translate(350, 70) rotate(15)">
+      <!-- Handle -->
+      <path d="M 45 95 L 55 95 L 60 170 C 60 180 40 180 40 170 Z" fill="#522b10" stroke="#2a1405" stroke-width="3"/>
+      <!-- Handle ridges -->
+      <rect x="42" y="110" width="16" height="5" fill="#a46f41" stroke="#2a1405"/>
+      <rect x="43" y="130" width="14" height="5" fill="#a46f41" stroke="#2a1405"/>
+      <!-- Ring -->
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#a46f41" stroke-width="12"/>
+      <!-- Inner Ring -->
+      <circle cx="50" cy="50" r="39" fill="none" stroke="#2a1405" stroke-width="2"/>
+      <!-- Glass glare -->
+      <circle cx="50" cy="50" r="38" fill="#fde6c4" opacity="0.15"/>
+      <path d="M 25 25 Q 40 10 60 20 Q 30 35 25 25 Z" fill="#ffffff" opacity="0.4"/>
+    </g>
+    
+    <!-- Text on desk center -->
+    <text x="360" y="200" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-style="italic" fill="#fde6c4" text-anchor="middle" filter="url(#drop-shadow)">Academic Research &amp; Machine Learning</text>
+  </g>
+</svg>
