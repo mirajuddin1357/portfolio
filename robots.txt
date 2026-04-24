@@ -1,0 +1,11 @@
+# ══════════════════════════════════════════════════════════════
+# ROBOTS.TXT — Tells search engine crawlers what to index
+# ★ Replace miraj-ud-din-portfolio.vercel.app with your actual deployed URL
+# ══════════════════════════════════════════════════════════════
+
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Point to sitemap for faster discovery
+Sitemap: https://miraj-ud-din-portfolio.vercel.app/sitemap.xml
